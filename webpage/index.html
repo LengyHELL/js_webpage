@@ -3,18 +3,25 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Szabadság nyilvántartás</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Autós napló</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Szabadság nyilvántartás<img src="calendar.jpg" width="32px" height="32px" /></h1>
-    <table>
+    <form onsubmit="appendList()">
+        <label for="bejegyzes">Bejegyzések</label>
+        <textarea id="bejegyzes" rows="6"></textarea>
 
-    </table>
-    <div class="result-div">
-        Kivett szabadságok összesen: <span class="result">0</span> nap.
-    </div>
+        <input id="megnevezes" type="text" placeholder="Megnevezés" required>
+
+        <label for="kmallas">km-számláló állása</label>
+        <input id="kmallas" type="number" value="0" min="0" step="1" pattern="\d*" required>
+
+        <label for="datum">Dátum</label>
+        <input id="datum" type="date">
+
+        <button type="submit">Hozzáad</button>
+    </form>
 </body>
 
 </html>
