@@ -16,8 +16,17 @@ function appendList() {
     let name = document.getElementById("megnevezes");
     let kms = document.getElementById("kmallas");
     let date = document.getElementById("datum");
+
     
-    registry.push({name: name.value, kms: kms.value, date: date.value});
+    if (registry.length <= 0) {
+        registry.push({name: name.value, kms: kms.value, date: date.value});
+    }
+    else if (
+        Number(kms.value) > Number(registry[registry.length - 1].kms) &&
+        (new Date(date.value) >= new Date(registry[registry.length - 1].date))
+    ) {
+        registry.push({name: name.value, kms: kms.value, date: date.value});
+    }
     
     setListValue();
 }
