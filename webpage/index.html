@@ -8,9 +8,9 @@
 </head>
 
 <body>
-    <form onsubmit="appendList()">
+    <form id="form" onsubmit="return false;">
         <label for="bejegyzes">Bejegyzések</label>
-        <textarea id="bejegyzes" rows="6"></textarea>
+        <textarea id="bejegyzes" rows="6" onreset="setListValue()"></textarea>
 
         <input id="megnevezes" type="text" placeholder="Megnevezés" required>
 
@@ -20,7 +20,7 @@
         <label for="datum">Dátum</label>
         <input id="datum" type="date">
 
-        <button type="submit">Hozzáad</button>
+        <button id="hozzaad" type="submit">Hozzáad</button>
     </form>
 </body>
 
